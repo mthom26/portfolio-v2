@@ -22,6 +22,8 @@ body {
 
 .main {
   margin-left: var(--navWidthLarge);
+  border: 1px solid cyan;
+  width: 100%;
 }
 
 /* ------------- */
