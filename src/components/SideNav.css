@@ -26,6 +26,10 @@
   .sideNav {
     border: 1px solid greenyellow;
     width: 100%;
-    transform: translateX(-90%);
+    transition: transform 450ms ease-out;
+  }
+
+  .sideNavHidden {
+    transform: translateX(-100%);
   }
 }

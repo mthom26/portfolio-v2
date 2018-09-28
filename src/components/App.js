@@ -8,11 +8,27 @@ import Contact from './Contact';
 import NavButton from './NavButton';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      navOpen: false
+    };
+
+    this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  toggleNav() {
+    this.setState({ navOpen: !this.state.navOpen });
+  }
+
   render() {
+    const { navOpen } = this.state;
+
     return (
       <div className="app">
-        <SideNav />
-        <NavButton />
+        <SideNav navOpen={navOpen}/>
+        <NavButton toggleNav={this.toggleNav} />
         <div className="main">
           <Landing />
           <About />

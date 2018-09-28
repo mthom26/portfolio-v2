@@ -1,8 +1,43 @@
 .navButton {
-  position: absolute;
-  width: 60px;
-  height: 60px;
+  display: none;
+  position: fixed;
+  width: 70px;
+  height: 70px;
   top: 40px;
   right: 40px;
   border: 1px solid greenyellow;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  height: 6px;
+  width: 50px;
+  border-radius: 3px;
+  background: var(--light1);
+}
+
+.one {
+  transform: translate(10px, 14px);
+}
+
+.two {
+  transform: translate(10px, 30px);
+}
+
+.three {
+  transform: translate(10px, 47px);
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1080px) {
+  
+}
+
+@media (max-width: 650px) {
+  .navButton {
+    display: block;
+  }
 }
