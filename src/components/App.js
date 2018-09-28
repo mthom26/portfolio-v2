@@ -28,7 +28,10 @@ class App extends Component {
     return (
       <div className="app">
         <SideNav navOpen={navOpen}/>
-        <NavButton toggleNav={this.toggleNav} />
+        <NavButton
+          navOpen={navOpen}
+          toggleNav={this.toggleNav}
+        />
         <div className="main">
           <Landing />
           <About />

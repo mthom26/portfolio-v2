@@ -7,6 +7,10 @@
   right: 40px;
   border: 1px solid greenyellow;
   cursor: pointer;
+  transition: transform 250ms linear;
+}
+.navButton.open {
+  transform: rotate(90deg);
 }
 
 .line {
@@ -15,20 +19,29 @@
   width: 50px;
   border-radius: 3px;
   background: var(--light1);
+  transition: transform 250ms linear, opacity 250ms linear;
 }
 
 .one {
   transform: translate(10px, 14px);
 }
+.one.open {
+  transform: translate(10px, 30px) rotate(45deg);
+}
 
 .two {
   transform: translate(10px, 30px);
+}
+.two.open {
+  opacity: 0;
 }
 
 .three {
   transform: translate(10px, 47px);
 }
-
+.three.open {
+  transform: translate(10px, 30px) rotate(135deg);
+}
 /* ------------- */
 /* Media Queries */
 /* ------------- */
