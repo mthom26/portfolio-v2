@@ -7,11 +7,20 @@
   width: var(--navWidthLarge);
   border: 1px solid red;
   display: flex;
+  justify-content: flex-end;
+}
+
+.navLinks {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
 }
 
+.progress {
+  width: 6px;
+  background: orangered;
+}
 /* ------------- */
 /* Media Queries */
 /* ------------- */
