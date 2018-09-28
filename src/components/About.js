@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About = () => {
+const About = ({ reference }) => {
   return (
-    <div id="about" style={{height: '60vh'}}>
+    <div ref={reference} id="about" style={{height: '60vh'}}>
       <h1>About</h1>
     </div>
   )

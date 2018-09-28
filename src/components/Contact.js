@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Contact = () => {
+const Contact = ({ reference }) => {
   return (
-    <div id="contact" style={{height: '60vh'}}>
+    <div ref={reference} id="contact" style={{height: '60vh'}}>
       <h1>Contact</h1>
     </div>
   )

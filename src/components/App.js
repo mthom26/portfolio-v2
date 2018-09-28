@@ -13,7 +13,14 @@ class App extends Component {
 
     this.state = {
       navOpen: false,
-      progress: 0
+      progress: 0,
+      intersectionAmount: {
+        home: 0,
+        about: 0,
+        portfolio: 0,
+        contact: 0
+      },
+      activeLink: "" 
     };
 
     this.toggleNav = this.toggleNav.bind(this);
@@ -21,28 +28,40 @@ class App extends Component {
 
     // Create refs for each section
     this.rootRef = React.createRef();
-    // this.homeRef = React.createRef();
-    // this.aboutRef = React.createRef();
+    this.homeRef = React.createRef();
+    this.aboutRef = React.createRef();
     this.portfolioRef = React.createRef();
-    // this.contactRef = React.createRef();
+    this.contactRef = React.createRef();
     
-    this.observer = new IntersectionObserver((items) => {
-      // console.log(items);
+    this.observer = new IntersectionObserver(items => {
+      // Get ratio of the items that are visible
+      let { intersectionAmount } = this.state; 
+      items.forEach(item => {
+        intersectionAmount[item.target.id] = item.intersectionRatio;
+      });
+
+      // Find item with highest visibility
+      const activeLink = Object.keys(intersectionAmount).reduce((acc, cur) => {
+        return intersectionAmount[acc] > intersectionAmount[cur] ? acc : cur
+      });
+
+      // Save intersection amounts and active item in state
+      this.setState({
+        intersectionAmount,
+        activeLink
+      });
     }, {
       root: this.rootRef.current,
-      threshold: 0.1
+      threshold: new Array(11).fill(0).map((v, i) => i * 0.1)
     })
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    // this.observer.observe(this.homeRef.current);
-    // this.observer.observe(this.aboutRef.current);
+    this.observer.observe(this.homeRef.current);
+    this.observer.observe(this.aboutRef.current);
     this.observer.observe(this.portfolioRef.current);
-    // this.observer.observe(this.contactRef.current);
-    // console.log(document.scrollingElement.scrollTop);
-    // console.log(document.scrollingElement.scrollHeight);
-    // console.log(window.innerHeight);
+    this.observer.observe(this.contactRef.current);
   }
 
   componentWillUnmount() {
@@ -61,23 +80,24 @@ class App extends Component {
   }
 
   render() {
-    const { navOpen, progress } = this.state;
+    const { navOpen, progress, activeLink } = this.state;
 
     return (
       <div className="app">
         <SideNav
           navOpen={navOpen}
           progress={progress}
+          activeLink={activeLink}
         />
         <NavButton
           navOpen={navOpen}
           toggleNav={this.toggleNav}
         />
         <div ref={this.rootRef} className="main">
-          <Landing />
-          <About />
+          <Landing reference={this.homeRef} />
+          <About reference={this.aboutRef} />
           <Portfolio reference={this.portfolioRef} />
-          <Contact />
+          <Contact reference={this.contactRef} />
         </div>
       </div>
     );

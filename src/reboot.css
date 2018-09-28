@@ -137,11 +137,10 @@
    -webkit-text-decoration-skip: objects;
  }
  
-/* Unneeded css */
-/* a:hover {
+a:hover {
    color: #0056b3;
    text-decoration: underline;
-} */
+}
  
  a:not([href]):not([tabindex]) {
    color: inherit;
@@ -156,7 +155,7 @@
  a:not([href]):not([tabindex]):focus {
    outline: 0;
  }
- 
+
  pre,
  code,
  kbd,
