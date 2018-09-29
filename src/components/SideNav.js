@@ -2,34 +2,63 @@ import React from 'react';
 
 import './SideNav.css';
 
-const SideNav = ({ navOpen, progress, activeLink }) => {
+const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
   const classes = navOpen 
     ? "sideNav"
     : "sideNav sideNavHidden";
+  const { home, about, portfolio, contact } = sectionPositions;
 
   return (
     <div className={classes}>
       <nav className="navLinks">
         <a
-          className={`navLink ${activeLink == 'home' ? 'active': ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: home,
+              behavior: 'smooth'
+            });
+          }}
+          className={`navLink ${activeLink === 'home' ? 'active': ''}`}
           href="#home"
         >
           Home
         </a>
         <a
-          className={`navLink ${activeLink == 'about' ? 'active': ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: about,
+              behavior: 'smooth'
+            });
+          }}
+          className={`navLink ${activeLink === 'about' ? 'active': ''}`}
           href="#about"
         >
           About
         </a>
         <a
-          className={`navLink ${activeLink == 'portfolio' ? 'active': ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: portfolio,
+              behavior: 'smooth'
+            });
+          }}
+          className={`navLink ${activeLink === 'portfolio' ? 'active': ''}`}
           href="#portfolio"
         >
           Portfolio
         </a>
         <a
-          className={`navLink ${activeLink == 'contact' ? 'active': ''}`}
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({
+              top: contact,
+              behavior: 'smooth'
+            });
+          }}
+          className={`navLink ${activeLink === 'contact' ? 'active': ''}`}
           href="#contact"
         >
           Contact

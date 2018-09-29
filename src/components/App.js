@@ -20,7 +20,14 @@ class App extends Component {
         portfolio: 0,
         contact: 0
       },
-      activeLink: "" 
+      activeLink: "",
+      sectionPositions: {
+        home: 0,
+        about: 0,
+        portfolio: 0,
+        contact: 0
+      },
+      getSectionPositions: true
     };
 
     this.toggleNav = this.toggleNav.bind(this);
@@ -34,21 +41,37 @@ class App extends Component {
     this.contactRef = React.createRef();
     
     this.observer = new IntersectionObserver(items => {
-      // Get ratio of the items that are visible
-      let { intersectionAmount } = this.state; 
+      /*-----------------------------------------------------------------------
+        intersectionAmount is updated when the user scrolls and determines 
+        which nav link should be highlighted. sectionPositions records the 
+        position of each section to pass to SideNav for smooth scrolling. 
+        Currently sectionPosition only works on load/refresh so resizing window 
+        vertically results in incorrect values. 
+      -----------------------------------------------------------------------*/
+      let {
+        intersectionAmount,
+        sectionPositions,
+        getSectionPositions
+      } = this.state; 
+
       items.forEach(item => {
         intersectionAmount[item.target.id] = item.intersectionRatio;
+        if(getSectionPositions){
+          sectionPositions[item.target.id] = item.boundingClientRect.top;
+        }
       });
-
+      
       // Find item with highest visibility
       const activeLink = Object.keys(intersectionAmount).reduce((acc, cur) => {
         return intersectionAmount[acc] > intersectionAmount[cur] ? acc : cur
       });
 
-      // Save intersection amounts and active item in state
+      // Save new state
       this.setState({
         intersectionAmount,
-        activeLink
+        sectionPositions,
+        activeLink,
+        getSectionPositions: false
       });
     }, {
       root: this.rootRef.current,
@@ -57,7 +80,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.observer.observe(this.homeRef.current);
     this.observer.observe(this.aboutRef.current);
     this.observer.observe(this.portfolioRef.current);
@@ -80,7 +103,7 @@ class App extends Component {
   }
 
   render() {
-    const { navOpen, progress, activeLink } = this.state;
+    const { navOpen, progress, activeLink, sectionPositions } = this.state;
 
     return (
       <div className="app">
@@ -88,6 +111,7 @@ class App extends Component {
           navOpen={navOpen}
           progress={progress}
           activeLink={activeLink}
+          sectionPositions={sectionPositions}
         />
         <NavButton
           navOpen={navOpen}
