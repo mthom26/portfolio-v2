@@ -39,7 +39,7 @@ class App extends Component {
     this.aboutRef = React.createRef();
     this.portfolioRef = React.createRef();
     this.contactRef = React.createRef();
-    
+
     this.observer = new IntersectionObserver(items => {
       /*-----------------------------------------------------------------------
         intersectionAmount is updated when the user scrolls and determines 

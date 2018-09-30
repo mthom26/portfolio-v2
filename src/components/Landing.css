@@ -10,6 +10,7 @@
 .landingContent {
   margin: 0 4rem;
   padding: 0 1rem;
+  transition: transform 300ms ease-out, opacity 400ms linear;
 }
 
 .landingColored {

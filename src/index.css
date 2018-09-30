@@ -58,3 +58,20 @@ h2 {
     margin-left: 0;
   }
 }
+
+/* ---------- */
+/* Animations */
+/* ---------- */
+.fadeLeft {
+  transform: translateX(-10%);
+  opacity: 0;
+}
+
+.fadeRight {
+  transform: translateX(10%);
+  opacity: 0;
+}
+
+.fade {
+  opacity: 0;
+}
