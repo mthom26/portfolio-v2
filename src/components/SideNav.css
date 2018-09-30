@@ -27,8 +27,25 @@
   opacity: 0.7;
 }
 
+.navBarBack {
+  height: 3px;
+  background: cyan;
+}
+
+.navBarFront {
+  height: 3px;
+  background: red;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 250ms ease-out;
+}
+
 .active {
   opacity: 1;
+}
+
+.activeBar {
+  transform: scaleX(1);
 }
 
 .navLink:hover {

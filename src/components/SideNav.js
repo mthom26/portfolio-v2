@@ -23,6 +23,11 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
           href="#home"
         >
           Home
+          <div className="navBarBack">
+            <div
+              className={`navBarFront ${activeLink === 'home' ? 'activeBar': ''}`}
+            />
+          </div>
         </a>
         <a
           onClick={(e) => {
@@ -36,6 +41,11 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
           href="#about"
         >
           About
+          <div className="navBarBack">
+            <div
+              className={`navBarFront ${activeLink === 'about' ? 'activeBar': ''}`}
+            />
+          </div>
         </a>
         <a
           onClick={(e) => {
@@ -49,6 +59,11 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
           href="#portfolio"
         >
           Portfolio
+          <div className="navBarBack">
+            <div
+              className={`navBarFront ${activeLink === 'portfolio' ? 'activeBar': ''}`}
+            />
+          </div>
         </a>
         <a
           onClick={(e) => {
@@ -62,6 +77,11 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
           href="#contact"
         >
           Contact
+          <div className="navBarBack">
+            <div
+              className={`navBarFront ${activeLink === 'contact' ? 'activeBar': ''}`}
+            />
+          </div>
         </a>
       </nav>
       <div style={{height: `${progress}%`}} className="progress" />
