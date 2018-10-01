@@ -1,0 +1,29 @@
+.contact {
+  background: var(--dark2);
+  padding: 5rem 5rem 3rem 5rem;
+}
+
+.contact p {
+  margin-bottom: 2rem; 
+}
+
+.contactItem {
+  margin-bottom: 2rem;
+}
+
+.contactLink {
+  margin-right: 2rem;
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1350px) {
+
+}
+
+@media (max-width: 650px) {
+  .contact {
+    padding: 5rem 2rem 3rem 2rem;
+  }
+}
