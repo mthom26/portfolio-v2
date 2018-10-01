@@ -1,5 +1,6 @@
 .project {
   display: flex;
+  margin-bottom: 5rem;
 }
 
 .projectImage {
@@ -40,6 +41,10 @@
 }
 
 @media (max-width: 450px) {
+  .project {
+    margin-bottom: 2rem;
+  }
+
   .projectButtons {
     flex-direction: column;
     align-items: center;

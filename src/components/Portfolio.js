@@ -32,8 +32,8 @@ class Portfolio extends React.Component {
   componentDidMount() {
     this.observer.observe(this.fadeRefOne.current);
     this.observer.observe(this.fadeRightRefOne.current);
-    // this.observer.observe(this.fadeRefTwo.current);
-    // this.observer.observe(this.fadeRightRefTwo.current);
+    this.observer.observe(this.fadeRefTwo.current);
+    this.observer.observe(this.fadeRightRefTwo.current);
   }
 
   render() {
@@ -50,6 +50,16 @@ class Portfolio extends React.Component {
         >
           <h3>Auto Body Repairs</h3>
           <p>This is a single page website built GatsbyJS static site generator. It includes eye catching animations and google maps integration.</p>
+        </Project>
+        <Project
+          imageRef={this.fadeRefTwo}
+          contentRef={this.fadeRightRefTwo}
+          image={restaurantImage}
+          linkAddress="https://gatsbyrestaurant.netlify.com/"
+          gitHubAddress="https://github.com/mthom26/gatsby-restaurant-v2"
+        >
+          <h3>Good Eating</h3>
+          <p>A multi page website built using GatsbyJS including lazy loaded images, google maps and a contact form.</p>
         </Project>
       </div>
     )
