@@ -40,7 +40,7 @@ h2 {
 
 .main {
   margin-left: var(--navWidthLarge);
-  border: 1px solid cyan;
+  /* border: 1px solid cyan; */
   width: 100%;
 }
 

@@ -1,7 +1,7 @@
 .buttonBase {
   position: relative;
   margin-bottom: 1rem;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .button {
@@ -54,7 +54,7 @@
 }
 
 .buttonBase:hover {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .buttonBase:hover .buttonText {
