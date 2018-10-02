@@ -2,9 +2,7 @@ import React from 'react';
 
 import './Project.css';
 import Button from './Button';
-
-import githubIcon from '../images/githubGreen.svg';
-import linkIcon from '../images/linkGreen.svg';
+import { linkIcon, gitHubIcon } from '../utils/icons.js';
 
 const Project = ({
   children,
@@ -12,7 +10,8 @@ const Project = ({
   contentRef,
   image,
   gitHubAddress,
-  linkAddress
+  linkAddress,
+  customColor
 }) => {
   return (
     <div className="project">
@@ -23,8 +22,18 @@ const Project = ({
         <div ref={contentRef} className="projectContentInner fadeRight">
           {children}
           <div className="projectButtons">
-            <Button text="Github" icon={githubIcon} link={gitHubAddress}/>
-            <Button text="Live Demo" icon={linkIcon} link={linkAddress}/>
+            <Button
+              text="Github"
+              icon={gitHubIcon}
+              link={gitHubAddress}
+              customColor={customColor}
+            />
+              <Button
+              text="Live Demo"
+              icon={linkIcon}
+              link={linkAddress}
+              customColor={customColor}
+            />
           </div>
         </div>
       </div>
