@@ -8,6 +8,7 @@
   border: 1px solid greenyellow;
   cursor: pointer;
   transition: transform 250ms linear;
+  z-index: 21;
 }
 .navButton.open {
   transform: rotate(90deg);

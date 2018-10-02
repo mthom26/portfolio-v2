@@ -6,8 +6,10 @@
   height: 100vh;
   width: var(--navWidthLarge);
   /* border: 1px solid red; */
+  background: var(--dark0);
   display: flex;
   justify-content: flex-end;
+  z-index: 20;
 }
 
 .navLinks {
@@ -78,5 +80,9 @@
 
   .sideNavHidden {
     transform: translateX(-100%);
+  }
+
+  .progress {
+    display: none;
   }
 }

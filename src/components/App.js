@@ -112,6 +112,7 @@ class App extends Component {
           progress={progress}
           activeLink={activeLink}
           sectionPositions={sectionPositions}
+          toggleNav={this.toggleNav}
         />
         <NavButton
           navOpen={navOpen}

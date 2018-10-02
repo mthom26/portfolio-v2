@@ -2,18 +2,25 @@ import React from 'react';
 
 import './SideNav.css';
 
-const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
+const SideNav = ({
+  navOpen,
+  progress,
+  activeLink,
+  sectionPositions,
+  toggleNav
+}) => {
   const classes = navOpen 
     ? "sideNav"
     : "sideNav sideNavHidden";
   const { home, about, portfolio, contact } = sectionPositions;
-
+  
   return (
     <div className={classes}>
       <nav className="navLinks">
         <a
           onClick={(e) => {
             e.preventDefault();
+            toggleNav();
             window.scrollTo({
               top: home,
               behavior: 'smooth'
@@ -32,6 +39,7 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
         <a
           onClick={(e) => {
             e.preventDefault();
+            toggleNav();
             window.scrollTo({
               top: about,
               behavior: 'smooth'
@@ -50,6 +58,7 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
         <a
           onClick={(e) => {
             e.preventDefault();
+            toggleNav();
             window.scrollTo({
               top: portfolio,
               behavior: 'smooth'
@@ -68,6 +77,7 @@ const SideNav = ({ navOpen, progress, activeLink, sectionPositions }) => {
         <a
           onClick={(e) => {
             e.preventDefault();
+            toggleNav();
             window.scrollTo({
               top: contact,
               behavior: 'smooth'

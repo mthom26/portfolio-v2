@@ -3,8 +3,8 @@ import React from 'react';
 import './Portfolio.css';
 import Project from './Project';
 
-import autoRepairImage from '../images/autobodyrepair.jpg';
-import restaurantImage from '../images/projectrestaurant.png';
+import autoRepairImage from '../images/autobodyrepairdark.jpg';
+import restaurantImage from '../images/projectrestaurantdark.jpg';
 
 class Portfolio extends React.Component {
   constructor(props) {
