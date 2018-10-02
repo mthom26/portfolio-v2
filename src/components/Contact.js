@@ -12,19 +12,23 @@ const Contact = ({ reference }) => {
 
       <div className="contactItem">
         <h3 className="contactSpan">Email</h3>
-        <a href="mailto:michaelthompson.code@gmail.com">
-          michaelthompson.code@gmail.com
-        </a>
+        <div>
+          <a href="mailto:michaelthompson.code@gmail.com">
+            michaelthompson.code@gmail.com
+          </a>
+        </div>
       </div>
 
       <div className="contactItem">
         <h3 className="contactSpan">Links</h3>
-        <a className="contactLink" href="mailto:michaelthompson.code@gmail.com">
-          <img src={emailIcon} width="32px" alt="" />
-        </a>
-        <a className="contactLink" href="https://github.com/mthom26">
-          <img src={githubIcon} width="32px" alt="" />
-        </a>
+        <div>
+          <a className="contactLink" href="mailto:michaelthompson.code@gmail.com">
+            <img src={emailIcon} width="32px" alt="" />
+          </a>
+          <a className="contactLink" href="https://github.com/mthom26">
+            <img src={githubIcon} width="32px" alt="" />
+          </a>
+        </div>
       </div>
     </div>
   )

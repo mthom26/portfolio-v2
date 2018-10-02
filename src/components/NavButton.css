@@ -3,15 +3,17 @@
   position: fixed;
   width: 70px;
   height: 70px;
-  top: 40px;
-  right: 40px;
-  border: 1px solid greenyellow;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 10px;
   cursor: pointer;
   transition: transform 250ms linear;
   z-index: 21;
+  transform: scale(0.8);
 }
 .navButton.open {
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(0.8);
 }
 
 .line {

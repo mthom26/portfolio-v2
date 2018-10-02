@@ -53,11 +53,11 @@ class App extends Component {
         sectionPositions,
         getSectionPositions
       } = this.state; 
-
+      
       items.forEach(item => {
         intersectionAmount[item.target.id] = item.intersectionRatio;
         if(getSectionPositions){
-          sectionPositions[item.target.id] = item.boundingClientRect.top;
+          sectionPositions[item.target.id] = item.target.offsetTop;
         }
       });
       
