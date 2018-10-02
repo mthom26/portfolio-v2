@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 
 import SideNav from './SideNav';
 import Landing from './Landing';
@@ -80,6 +81,8 @@ class App extends Component {
   }
 
   componentDidMount() {
+    ReactGA.initialize('UA-107308251-4');
+    ReactGA.pageview('/');
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     this.observer.observe(this.homeRef.current);
     this.observer.observe(this.aboutRef.current);

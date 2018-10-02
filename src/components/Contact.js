@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 
 import './Contact.css';
 import emailIcon from '../images/envelopeWhite.svg';
@@ -22,10 +23,28 @@ const Contact = ({ reference }) => {
       <div className="contactItem">
         <h3 className="contactSpan">Links</h3>
         <div>
-          <a className="contactLink" href="mailto:michaelthompson.code@gmail.com">
+          <a
+            className="contactLink"
+            href="mailto:michaelthompson.code@gmail.com"
+            onClick={() => {
+              ReactGA.event({
+                category: 'Contact',
+                action: 'Clicked Email Link'
+              })
+            }}
+          >
             <img src={emailIcon} width="32px" alt="" />
           </a>
-          <a className="contactLink" href="https://github.com/mthom26">
+          <a
+            className="contactLink"
+            href="https://github.com/mthom26"
+            onClick={() => {
+              ReactGA.event({
+                category: 'Github',
+                action: 'Clicked Main Github Link'
+              })
+            }}
+          >
             <img src={githubIcon} width="32px" alt="" />
           </a>
         </div>

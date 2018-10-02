@@ -16,7 +16,7 @@ const Project = ({
   return (
     <div className="project">
       <div ref={imageRef} className="projectImage fade">
-        <img src={image} width="100%" />
+        <img src={image} width="100%" alt={linkAddress} />
       </div>
       <div className="projectContent">
         <div ref={contentRef} className="projectContentInner fadeRight">
