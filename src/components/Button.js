@@ -1,10 +1,28 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 
 import './Button.css';
 
-const Button = ({ text, icon, link, customColor }) => {
+const Button = ({
+  text,
+  icon,
+  link,
+  customColor,
+  bClickCategory,
+  bClickAction
+}) => {
   return (
-    <a href={`${link}`} className="buttonBase">
+    <a
+      href={`${link}`}
+      className="buttonBase"
+      onClick={() => {
+        ReactGA.event({
+          category: bClickCategory,
+          action: bClickAction
+        })
+      }}
+      target="_blank"
+    >
       <div className="button">
         <span style={{ color: customColor }} className="buttonText">
           {text}

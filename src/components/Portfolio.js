@@ -48,6 +48,7 @@ class Portfolio extends React.Component {
           linkAddress="https://autobodyrepairs.now.sh/"
           gitHubAddress="https://github.com/mthom26/car-body-repair"
           customColor="#d24a43"
+          projectName="Auto Body Repairs"
         >
           <h3>Auto Body Repairs</h3>
           <p>This is a single page website built GatsbyJS static site generator. It includes eye catching animations and google maps integration.</p>
@@ -59,6 +60,7 @@ class Portfolio extends React.Component {
           linkAddress="https://gatsbyrestaurant.netlify.com/"
           gitHubAddress="https://github.com/mthom26/gatsby-restaurant-v2"
           customColor="#e2d565"
+          projectName="Good Eating"
         >
           <h3>Good Eating</h3>
           <p>A multi page website built using GatsbyJS including lazy loaded images, google maps and a contact form.</p>

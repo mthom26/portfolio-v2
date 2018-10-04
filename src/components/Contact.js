@@ -14,8 +14,8 @@ const Contact = ({ reference }) => {
       <div className="contactItem">
         <h3 className="contactSpan">Email</h3>
         <div>
-          <a href="mailto:michaelthompson.code@gmail.com">
-            michaelthompson.code@gmail.com
+          <a className="contactLink" href="mailto:michael@michaelthompson.me">
+            michael@michaelthompson.me
           </a>
         </div>
       </div>
@@ -25,7 +25,7 @@ const Contact = ({ reference }) => {
         <div>
           <a
             className="contactLink"
-            href="mailto:michaelthompson.code@gmail.com"
+            href="mailto:michael@michaelthompson.me"
             onClick={() => {
               ReactGA.event({
                 category: 'Contact',
@@ -44,6 +44,7 @@ const Contact = ({ reference }) => {
                 action: 'Clicked Main Github Link'
               })
             }}
+            target="_blank"
           >
             <img src={githubIcon} width="32px" alt="" />
           </a>

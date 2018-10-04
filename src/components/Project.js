@@ -11,8 +11,12 @@ const Project = ({
   image,
   gitHubAddress,
   linkAddress,
-  customColor
+  customColor,
+  projectName
 }) => {
+  const githubString = `Clicked ${projectName} GitHub Link`;
+  const linkString = `Clicked ${projectName} Site Link`;
+
   return (
     <div className="project">
       <div ref={imageRef} className="projectImage fade">
@@ -27,12 +31,16 @@ const Project = ({
               icon={gitHubIcon}
               link={gitHubAddress}
               customColor={customColor}
+              bClickCategory="Github"
+              bClickAction={githubString}
             />
               <Button
               text="Live Demo"
               icon={linkIcon}
               link={linkAddress}
               customColor={customColor}
+              bClickCategory="Site Link"
+              bClickAction={linkString}
             />
           </div>
         </div>
