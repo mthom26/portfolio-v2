@@ -177,6 +177,7 @@ class Contact extends React.Component {
                 })
               }}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={githubIcon} width="32px" alt="" />
             </a>

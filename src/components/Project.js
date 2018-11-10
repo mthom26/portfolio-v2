@@ -34,8 +34,8 @@ const Project = ({
               bClickCategory="Github"
               bClickAction={githubString}
             />
-              <Button
-              text="Live Demo"
+            <Button
+              text="Site Link"
               icon={linkIcon}
               link={linkAddress}
               customColor={customColor}
