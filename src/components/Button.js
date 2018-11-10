@@ -22,6 +22,7 @@ const Button = ({
         })
       }}
       target="_blank"
+      rel="noopener noreferrer"
     >
       <div className="button">
         <span style={{ color: customColor }} className="buttonText">

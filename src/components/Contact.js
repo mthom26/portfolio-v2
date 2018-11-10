@@ -41,13 +41,13 @@ class Contact extends React.Component {
       return;
     }
     this.setState({ loading: true, formFailure: false, formSuccess: false });
-    console.log(`EndPoint: ${process.env.REACT_APP_AWS_ENDPOINT}`);
+
     return fetch(process.env.REACT_APP_AWS_ENDPOINT, {
       method: 'POST',
       body: JSON.stringify(this.state.formData)
     })
     .then(response => {
-      console.log(response);
+      // console.log(response);
       this.setState({
         formData: initialFormData, 
         formSuccess: true,
