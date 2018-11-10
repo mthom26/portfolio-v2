@@ -2,7 +2,6 @@ import React from 'react';
 import ReactGA from 'react-ga';
 
 import './Contact.css';
-import Button from './Button';
 import emailIcon from '../images/envelopeWhite.svg';
 import githubIcon from '../images/githubWhite.svg';
 import spinner from '../images/spinner.svg';
@@ -37,7 +36,10 @@ class Contact extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    //console.log(this.state.formData);
+    if(this.state.formSuccess || this.state.formFailure || this.state.loading) {
+      // Don't do anything when button is clicked
+      return;
+    }
     this.setState({ loading: true, formFailure: false, formSuccess: false });
     console.log(`EndPoint: ${process.env.REACT_APP_AWS_ENDPOINT}`);
     return fetch(process.env.REACT_APP_AWS_ENDPOINT, {
@@ -65,11 +67,27 @@ class Contact extends React.Component {
   render() {
     const { reference } = this.props;
     const { name, email, message } = this.state.formData;
-    const { loading } = this.state;
+    const { loading, formSuccess, formFailure } = this.state;
 
     const loadingClass = loading
       ? "loading"
       : "";
+    
+    const successClass = formSuccess
+      ? "success"
+      : "";
+    
+    const failureClass = formFailure
+      ? "failure"
+      : "";
+
+    let buttonText = "Send Message";
+    if(formSuccess) {
+      buttonText =  "Message Sent!"
+    }
+    if(formFailure) {
+      buttonText =  "Message failed!"
+    }
 
     return (
       <div className="contact" ref={reference} id="contact">
@@ -112,15 +130,15 @@ class Contact extends React.Component {
 
           <div onClick={this.onSubmit} className="buttonBaseC">
             <div className="buttonC">
-              <span style={{ color: "#e29865" }} className={`buttonTextC ${loadingClass}`}>
-                Send Message
+              <span className={`buttonTextC ${loadingClass} ${successClass} ${failureClass}`}>
+                {buttonText}
               </span>
               <div className={`buttonIconC ${loadingClass}`}>
                 <img src={spinner} alt="" />
               </div>
             </div>
             <div className="buttonBottomC" />
-            <div style={{ background: "#e29865" }} className={`buttonBottomVarC ${loadingClass}`} />
+            <div className={`buttonBottomVarC ${loadingClass} ${successClass} ${failureClass}`} />
           </div>
          
         </form>

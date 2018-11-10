@@ -59,22 +59,9 @@
   box-shadow: 0 0 5px var(--orange);
 }
 
-/* ------------- */
-/* Media Queries */
-/* ------------- */
-@media (max-width: 1350px) {
-
-}
-
-@media (max-width: 650px) {
-  .contact {
-    padding: 5rem 2rem 3rem 2rem;
-  }
-}
-
-/* ------------- */
-/* Custom Button */
-/* ------------- */
+/* ------------------------------------------------------ */
+/* Custom Button - mostly a duplicate of Button Component */
+/* ------------------------------------------------------ */
 .buttonBaseC {
   cursor: pointer;
   position: relative;
@@ -97,6 +84,7 @@
 
 .buttonTextC {
   position: relative;
+  color: var(--orange);
   margin: 0;
   flex-basis: 9rem;
   transform: translateX(1.5rem);
@@ -126,6 +114,7 @@
 .buttonBottomVarC {
   position: absolute;
   bottom: 0;
+  background: var(--orange);
   width: 100%;
   height: 3px;
   transform-origin: right;
@@ -149,6 +138,22 @@
   transform: scaleX(1);
 }
 
+.buttonTextC.success {
+  color: var(--green);
+}
+.buttonTextC.failure {
+  color: var(--red);
+}
+
+.buttonBottomVarC.success {
+  background: var(--green);
+  transform: scaleX(1);
+}
+.buttonBottomVarC.failure {
+  background: var(--red);
+  transform: scaleX(1);
+}
+
 .buttonBaseC:hover .buttonBottomVarC {
   transform: scaleX(1);
 }
@@ -159,5 +164,18 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* ------------- */
+/* Media Queries */
+/* ------------- */
+@media (max-width: 1350px) {
+
+}
+
+@media (max-width: 650px) {
+  .contact {
+    padding: 5rem 2rem 3rem 2rem;
   }
 }
